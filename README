@@ -1,0 +1,5 @@
+Version : 1.0
+File Type : Python
+Purpose : Cleanse the folder with mp3 of redudnat or matching files, 
+          remove the numerical tags from the start of mp3 file name & 
+          remove files of zero size
