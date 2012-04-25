@@ -29,7 +29,7 @@ import time
 import re
 import shutil
 
-# intial list to hold the files in the folder "/media/Backup/Songs/The\ Official\ UK\ Top\ Singles\ Chart"
+# intial list to hold the files in the desired folder
 path = os.getcwd()
 tempFolder = path + os.sep + 'tmp'
 
@@ -229,9 +229,9 @@ def movefilesizezero ():
     for metadata in os.walk( path ):
       # get the file only
       for files in metadata[2]:
-        #print "DEBUG : file name : " + str(files)
         #check size of the file is zero
-        if ( os.stat(path + os.sep + files).st_size == 0):
+        print "DEBUG : file name : " + str(files)
+        if (files.endswith(".mp3") ) and ( (os.path.getsize( path + os.sep + files ) == 0) ):
 	  print "\n DEBUG : zero size movig file : " + str(path + os.sep + files) + "; to : " + str(tempFolder)
           shutil.move( (path + os.sep + files), (tempFolder + os.sep + files) )
 
